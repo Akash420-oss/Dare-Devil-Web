@@ -57,6 +57,13 @@ level_select=(val)=>{
         lv.value="Inferno";
         }
 }
+let diabolic_host=(first_val,last_val,level_val)=>{
+    const expire_time=new Date();
+    expire_time.setTime(expire_time.getTime() + (2*24*60*60*1000))
+    let expire_date=expire_time.toUTCString()
+    document.cookie=`Diabolic_Host=${first_val}  ${last_val}; expires=${expire_date}; path=/`
+    document.cookie=`Diabolic_Level=${level_val}; expires=${expire_date}; path=/`
+    }
 button_on=(val)=>{
     if(val=='0'){
     document.getElementsByTagName('button')[0].hidden=false;
@@ -78,6 +85,7 @@ button_on=(val)=>{
     }
     else{
     document.getElementsByTagName('button')[0].click()
+    diabolic_host(first_val,last_val,level_val)
     }
 }
 else if(val===1){
@@ -97,9 +105,13 @@ else if(val===1){
         document.getElementsByTagName('button')[0].disabled=true;
         document.getElementsByTagName('button')[0].hidden=false;
         console.error("Forbidden by Hellfire")
+        document.getElementsByTagName('button')[0].disabled=true;
+        document.getElementsByTagName('button')[0].hidden=true;
+        console.error("Forbidden by Hellfire")
     }
     else{
     document.getElementsByTagName('button')[0].click()
+    diabolic_host(first_val,last_val,level_val)
     }
 }
 }
