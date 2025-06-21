@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="icons_fonts/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <script src="ascii.js" defer></script>
+  <script src="js.js" defer></script>
+  <title>404 - Lost in the Darkness</title><style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: #ff0000;
+      font-family: 'Creepster', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      flex-direction: column;
+      animation: flickerBackground 6s infinite;
+    }
+
+    h1 {
+      font-size: 130px;
+      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px darkred;
+      margin: 0;
+      animation: flickerText 2s infinite;
+    }
+
+    p {
+      font-size: 24px;
+      margin: 10px 0 20px 0;
+      text-shadow: 0 0 5px red;
+    }
+
+    button {
+      color: red;
+      text-decoration: none;
+      border: 2px solid red;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+      font-family: 'Creepster', cursive;
+      font-size: 18px;
+      background-color: #0d0000;
+      cursor:not-allowed;
+      /* players_name.html */
+    }
+    
+    button:hover {
+      background: red;
+      color: black;
+      box-shadow: 0 0 10px red;
+    }
+
+    @keyframes flickerText {
+      0%, 100% { opacity: 1; }
+      45% { opacity: 0.6; }
+      50% { opacity: 0.3; }
+      55% { opacity: 0.8; }
+    }
+
+    @keyframes flickerBackground {
+      0%, 100% { background-color: black; }
+      50% { background-color: #0d0000; }
+    }
+  </style>
+</head>
+<body>
+  <h1>404</h1>
+  <p>You’ve wandered where you shouldn’t have...</p>
+  <button id="e" onclick="p('0')">Escape the darkness</button>
+
+</body>
+</html>

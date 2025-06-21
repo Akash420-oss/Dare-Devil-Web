@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="icons_fonts/favicon.ico">
+    <title>Dare Devil Player</title>
+    <script src="ascii.js" defer></script>
+    <script src="g.js" defer></script>
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+  background-color: #0b0b0b;
+  color: #ff0000;
+  font-family: 'Creepster', cursive;
+  height: 100vh;
+  margin: 0;
+}
+
+div {
+  text-align: center;
+}
+
+label {
+  font-size: 1.5em;
+  color: #ff0000;
+  text-shadow: 0 0 5px red, 0 0 10px darkred;
+}
+select {
+      background: black;
+      color: crimson;
+      border: 2px solid crimson;
+      font-size: 1.5em;
+      padding: 10px 20px;
+      font-family: 'Creepster', cursive;
+      box-shadow: 0 0 15px red;
+      cursor: pointer;
+      appearance: none;
+      position: relative;
+      z-index: 1;
+    
+    }
+
+    select:hover {
+      background: crimson;
+      color: black;
+      box-shadow: 0 0 30px red;
+    }
+
+    option {
+      background: #111;
+      color: crimson;
+    }
+input[type="text"] {
+  background-color: #1a1a1a;
+  border: 2px solid #8b0000;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-family: 'Creepster', cursive;
+  color: #ff0000;
+  width: 300px;
+  outline: none;
+  box-shadow: 0 0 10px red;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 20px crimson, 0 0 40px red;
+}
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeInText {
+  from {
+
+     opacity: 0;
+  
+    }  
+  to {
+        opacity: 1;
+    }
+}
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+  }
+}
+@keyframes swing {
+      0%   { transform: rotate(1deg); }
+      50%  { transform: rotate(-1.5deg); }
+      100% { transform: rotate(1deg); }
+    }
+.slide-down{
+    position: relative;
+    animation: slideDown 1s ease-out forwards;
+}
+.creepy-button {
+    font-size: 30px;
+    background: transparent;
+    /* got_souls.html */
+    color: #ff0000;
+    padding: 20px 40px;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: color 0.4s;
+    animation: slideUp 1.5s ease-out forwards, fLicker 2s infinite;
+    /* no_souls.html */
+    animation-delay: 3s, 3s;
+    opacity: 0;
+    border: none;
+    font-family: 'Creepster', cursive;
+}
+
+.creepy-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.2);
+    transform: scale(0);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.creepy-button:hover::before {
+    transform: scale(1);
+}
+
+.creepy-button:hover {
+    color: #000;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000;
+    animation: none;
+}
+.button-container {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: showButton 1s forwards;
+  animation-delay: 2.5s; 
+}
+
+@keyframes showButton {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fLicker {
+
+0%,
+18%,
+22%,
+25%,
+53%,
+57%,
+100% {
+    opacity: 1;
+}
+
+20%,
+24%,
+55% {
+    opacity: 0.4;
+}
+
+50% {
+    transform: translate(1px, -1px) rotate(-1deg);
+}
+}
+@keyframes slideDown {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes slideFromLeft {
+    from {
+      left: -100%;
+      opacity: 0;
+    }
+    to {
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+  }
+  @keyframes slideFromRight {
+    from {
+      right: -100%;
+      opacity: 0;
+    }
+    to {
+      right: 50%;
+      transform: translateX(50%);
+      opacity: 1;
+    }
+  }
+    </style>
+    </head>
+    <body>
+      
+<div>
+    <h1 class="slide-down" style="font-size: 50px;">Dare Devil Player</h1>
+    <script>
+        document.getElementsByClassName('slide-down')[0].innerHTML= "<h1 style='font-size: 50px; animation: flicker 2.5s alternate;'>Dare Devil Player</h1>";
+ </script>   <br>
+<label for="firstname">Enter your Full Name if you have Dare</label><br><br><br><br>
+    </div>
+    <div style="justify-content: center;">
+    <input type="text" id="firstname" style="position: absolute;animation: slideFromRight 2s ease-out forwards,flicker 2.5s infinite;" placeholder="They whispers your FirstName" required>  <br><br><br><br><br><br>
+    <input type="text" id="lastname" style="position: absolute; animation: slideFromLeft 2s ease-out forwards,flicker 2.5s infinite;" placeholder="Your LastName stains you" required>  <br><br><br><br><br><br>
+    <h1 id="l" style='font-size: 30px; animation: slideUp 2s ease-in forwards,flicker 2.5s infinite alternate;'>Which Level will you take?</h1> <br><br><br><br>
+    <select id="op" style="animation: swing 2s infinite ease-in-out;">
+      <option>Summon The Darkness</option>
+      <option>Sinister</option>
+      <option>Inferno</option>
+    </select>
+  </div>
+  <div class="button-container">
+    <button id= "b" class="creepy-button" style="text-align: center;font-size: 30px">Hunt</button>
+  </div>
+</body>
+</html>

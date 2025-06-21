@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+.ghost-button {
+  font-family: 'Creepster', cursive;
+  font-size: 30px;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  background: transparent;
+  padding: 20px 40px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: color 0.4s;
+  animation: slideFromBottom 1s ease-out forwards, flicker 2s infinite;
+}
+
+.ghost-button::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 0, 0, 0.2);
+  transform: scale(0);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.ghost-button:hover::before {
+  transform: scale(1);
+}
+
+.ghost-button:hover {
+  color: #000;
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000;
+  animation: none;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(1px, -1px) rotate(-1deg);
+  }
+}
+@keyframes slideFromBottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+body {
+    background-color: #290600;
+    justify-content: center;
+    text-align: center;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: showButton 1s forwards;
+  animation-delay: 2.5s; 
+}
+
+@keyframes showButton {
+  to {
+    opacity: 1;
+  }
+}
+div {
+text-align: center;
+}
+@font-face{
+    font-family: blood;
+    src: url(icons_fonts/blood.ttf);
+}
+@font-face {
+    font-family: rusty;
+    src: url(icons_fonts/rusty.otf);
+}
+.glow {
+    color: #fdfcfc;
+    font-weight: bold;
+    text-align: center;
+    animation: glowPulse 2s infinite alternate;
+  }
+
+  @keyframes glowPulse {
+    0% {
+      text-shadow: 
+        0 0 5px #fdf9f9,
+        0 0 10px #fff,
+        0 0 15px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 25px #ff00ff;
+    }
+    100% {
+      text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #ff00ff,
+        0 0 40px #ff00ff,
+        0 0 50px #ff00ff;
+    }
+  }
+  .slide-down {
+    position: relative;
+    animation: slideFromTop 2s ease-out forwards;
+  }
+  @keyframes slideFromTop {
+    from {
+      top: -100px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+  .slide-left {
+    position: absolute;
+    animation: slideFromLeft 2s ease-out forwards;
+  }
+
+  @keyframes slideFromLeft {
+    from {
+      left: -100%;
+      opacity: 0;
+    }
+    to {
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 1;
+    }
+  }
+  .slide-right {
+    position: absolute;
+    animation: slideFromRight 2s ease-out forwards;
+  }
+
+  @keyframes slideFromRight {
+    from {
+      right: -100%;
+      opacity: 0;
+    }
+    to {
+      right: 50%;
+      transform: translateX(50%);
+      opacity: 1;
+    }
+  }
+  button { 
+  justify-content: flex-end;
+  align-items: flex-end;
+  }

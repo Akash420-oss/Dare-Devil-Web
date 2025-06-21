@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="icons_fonts/favicon.ico">
+  <title>Sinister Level</title>
+  <script src="ascii.js" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(ellipse at center, #0a0000 0%, #000000 100%);
+      font-family: 'UnifrakturCook', cursive;
+      color: #f2e4e4;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 1em;
+      color: crimson;
+      text-shadow: 0 0 15px red, 0 0 30px darkred;
+    }
+
+    .devil-face {
+      font-size: 5em;
+      color: crimson;
+      text-shadow: 0 0 15px crimson, 0 0 40px red, 0 0 70px darkred;
+      animation: pulse 3s infinite;
+      margin: 0.2em 0 0.5em 0;
+    }
+
+    .tarot-table {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 2em;
+      flex-wrap: wrap;
+    }
+
+    .tarot-card {
+      background: #100000;
+      border: 3px solid #2c0000;
+      border-radius: 10px;
+      width: 180px;
+      height: 300px;
+      padding: 1em;
+      box-shadow: 0 0 20px #000;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tarot-card:hover {
+      transform: scale(1.08) rotate(-1deg);
+      box-shadow: 0 0 25px red, 0 0 35px crimson;
+      border-color: crimson;
+    }
+
+    .symbol {
+      font-size: 2.5em;
+      color: crimson;
+      text-shadow: 0 0 10px red;
+      animation: flicker 1.5s infinite;
+    }
+
+    .card-title {
+      font-size: 1.3em;
+      color: #ccc;
+      text-shadow: 0 0 5px #400;
+    }
+
+    .glow-number {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 3em;
+      color: crimson;
+      text-shadow: 0 0 10px red, 0 0 20px crimson;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      font-family: 'UnifrakturCook', cursive;
+    }
+    .tarot-card:hover .glow-number {
+      opacity: 1;
+    }
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: #440000;
+      text-shadow: 0 0 5px #220000;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 15px crimson, 0 0 30px red;
+      }
+      50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 30px crimson, 0 0 60px red;
+      }
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 22%, 24%, 55% {
+        opacity: 0.2;
+      }
+    }
+  </style>
+  <script src="sinister.js" defer></script>
+</head>
+<body>
+  <h1>🜏 Sinister 🜏</h1>
+  <div class="devil-face">𓆩😈𓆪</div>
+  <div class="tarot-table">
+    <div class="tarot-card">
+      <div class="symbol">🜁</div>
+      <div id="1"></div>
+      <div class="card-title">The Fool</div>
+      <div class="glow-number">0</div>
+    </div>
+    <div class="tarot-card">
+      <div class="symbol">☾</div>
+      <div id="2"></div>
+      <div class="card-title">The Moon</div>
+      <div class="glow-number">18</div>
+    </div>
+    <div class="tarot-card">
+      <div class="symbol">𓄋</div>
+      <div id="3"></div>
+      <div class="card-title">The Devil</div>
+      <div class="glow-number">15</div>
+    </div>
+    <div class="tarot-card">
+      <div class="symbol">🗲</div>
+      <div id="4"></div>
+      <div class="card-title">The Tower</div>
+      <div class="glow-number">16</div>
+    </div>
+    <div class="tarot-card">
+      <div class="symbol">☠</div>
+      <div id="5"></div>
+      <div class="card-title">The Death</div>
+      <div class="glow-number">13</div>
+    </div>
+  </div>
+  <footer>
+    🕯 Beware... once you see the number, the number sees you.
+  </footer>
+</body>
+</html>
