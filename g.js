@@ -61,8 +61,8 @@ let diabolic_host=(first_val,last_val,level_val)=>{
     const expire_time=new Date();
     expire_time.setTime(expire_time.getTime() + (2*24*60*60*1000))
     let expire_date=expire_time.toUTCString()
-    document.cookie=`Diabolic_Host=${first_val}  ${last_val}; expires=${expire_date}; path=/`
-    document.cookie=`Diabolic_Level=${level_val}; expires=${expire_date}; path=/`
+    document.cookie=`Diabolical_Host=${first_val} ${last_val}; expires=${expire_date}; path=/`
+    document.cookie=`Level=${level_val}; expires=${expire_date}; path=/`
     }
 button_on=(val)=>{
     if(val=='0'){

@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport", content="width=device-width, initial-scale=1.0">
-    <title>Dare Devil</title>
-    <link rel="icon" type="images/x-icon" href="icons/favicon.ico">
- <link rel="stylesheet" href="front_theme.css">
-  </head>
-  <body>
-<div>
-  <img title="Welcome To Dare Devil" class="slide-down" src="icons_fonts/devil_pic.png" style="width: 250px; height: auto">
-<h1 class="slide-left" style="color: #d54801;
-font-family: rusty;
-font-size: 50px;
-">To</h1>  
-<h1 class="slide-right" style="color: #d54801;
-font-family: rusty;
-font-size: 60px;
-"><img src="icons_fonts/horn_left.png" style="width: 27px;">Dare Devil<img src="icons_fonts/horn_right.png" style="width: 30px;"></h1>
-<script>
-document.getElementsByClassName('slide-right')[0].innerHTML="<h1 class='glow' style='color: #d54801;font-family: rusty;font-size: 60px;'><img src='icons_fonts/horn_left.png' style='width: 27px;'>Dare Devil<img src='icons_fonts/horn_right.png' style='width: 30px;'></h1>"; 
-</script> 
-</div>
-<div class="button-container">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport", content="width=device-width, initial-scale=1.0">
+  <title>Dare Devil</title>
+  <link rel="icon" type="images/x-icon" href="icons/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="front_theme.css">
+</head>
+<body>
+
+  <div class="flicker-light"></div>
+  <div class="ghost"></div>
+  <h1 class="slide-down">Welcome</h1> 
+  <h1 id="1" class="slide-left">to</h1> 
+  <h1 id="2" class="slide-right">Dare Devil</h1>
+  <script>
+    let s=setTimeout(()=>{
+    document.getElementById('1').outerHTML=" <h1 id='1'>to</h1> "
+        document.getElementById('2').outerHTML=" <h1 id='2'>Dare Devil</h1> "
+    clearTimeout(s)
+    },2000)
+    </script>
   <a id="r" href="rules.html"></a>
-<script src="js.js"></script>
+  <script src="j.js"></script>
   <button class="ghost-button" onclick="rules()">Rules</button>
-</div> 
+
 </body>
 </html>

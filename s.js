@@ -1,11 +1,17 @@
 if(document.cookie.includes('Sinister')==true){
-document.cookie="Souls=99";
+const expire_time=new Date();
+expire_time.setTime(expire_time.getTime() + (2*24*60*60*1000))
+let expire_date=expire_time.toUTCString()
+document.cookie=`Souls=${btoa('99')}; expires=${expire_date}; path=/`;
 let s=setTimeout(()=>{
 location.href="sinister_level.html"
 },13000);
 }
 else if(document.cookie.includes('Inferno')==true){
-document.cookie="Souls=99";
+const expire_time=new Date();
+expire_time.setTime(expire_time.getTime() + (2*24*60*60*1000))
+let expire_date=expire_time.toUTCString()
+document.cookie=`Souls=${btoa('99')}; expires=${expire_date}; path=/`;
 let i=setTimeout(()=>{
  location.href="level_inferno.html"
 },13000); 
