@@ -113,7 +113,7 @@ to {
     left: -200px;
     width: 100px;
     height: 100px;
-    background: url('ghost_walk.png') no-repeat center/contain;
+    background: url('icons/ghost_walk.png') no-repeat center/contain;
     opacity: 0.20;
     animation: ghostWalk 15s linear infinite;
     z-index: 1;
