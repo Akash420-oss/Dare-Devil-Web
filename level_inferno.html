@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="icons_fonts/favicon.ico">
+  <title>Inferno Level</title>
+  <script src="ascii.js" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'UnifrakturCook', cursive;
+      color: #ffcccc;
+      text-align: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse at center, #0a0000 0%, #300000 80%, #000000 100%);
+      background-image:
+        url('icons/sigil.png'),
+        linear-gradient(to bottom, black, #1a0000);
+      background-blend-mode: overlay;
+      background-size: cover;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin-top: 1em;
+      color: darkred;
+      text-shadow: 0 0 10px red, 0 0 30px crimson, 0 0 50px black;
+      animation: bloodFlicker 2s infinite;
+    }
+
+    .devil-face {
+      font-size: 6em;
+      color: crimson;
+      text-shadow: 0 0 25px crimson, 0 0 60px red, 0 0 90px darkred;
+      animation: pulseHorror 3s infinite;
+      margin: 0.4em 0 1em 0;
+    }
+
+    .tarot-table {
+      display: flex;
+      justify-content: center;
+      gap: 3em;
+      padding: 2em;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tarot-card {
+      background: linear-gradient(180deg, #1a0000, #0a0000);
+      border: 4px solid #330000;
+      border-radius: 12px;
+      width: 220px;
+      height: 340px;
+      padding: 1em;
+      box-shadow: 0 0 25px #000;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .tarot-card::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: red;
+      box-shadow: 0 0 10px crimson;
+      filter: blur(1px);
+      z-index: 1;
+      animation: drip 2s infinite ease-in-out;
+    }
+
+    .tarot-card:hover {
+      transform: scale(1.1) rotate(-2deg);
+      box-shadow: 0 0 30px red, 0 0 50px darkred;
+      border-color: crimson;
+    }
+
+    .symbol {
+      font-size: 3em;
+      color: darkred;
+      text-shadow: 0 0 12px crimson, 0 0 25px red;
+      animation: bloodFlicker 1.5s infinite;
+    }
+
+    .card-title {
+      font-size: 1.5em;
+      color: #ff9999;
+      text-shadow: 0 0 6px #440000;
+    }
+
+    .glow-number {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 3em;
+      color: crimson;
+      text-shadow: 0 0 10px red, 0 0 25px darkred;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .tarot-card:hover .glow-number {
+      opacity: 1;
+    }
+
+    footer {
+      margin-top: 2em;
+      font-size: 1.1em;
+      color: #1f0000;
+      text-shadow: 0 0 5px #110000;
+      animation: pulseHorror 6s infinite;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background: url('icons/ghost_walk.png') repeat;
+      opacity: 0.04;
+      animation: mistMove 30s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes pulseHorror {
+      0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 15px crimson, 0 0 35px red;
+      }
+      50% {
+        transform: scale(1.04);
+        text-shadow: 0 0 30px crimson, 0 0 60px darkred;
+      }
+    }
+
+    @keyframes bloodFlicker {
+      0%, 15%, 25%, 70%, 100% {
+        opacity: 1;
+      }
+      20%, 30%, 55% {
+        opacity: 0.2;
+      }
+    }
+
+    @keyframes drip {
+      0% { transform: translateY(0px); opacity: 0.9; }
+      50% { transform: translateY(5px); opacity: 0.4; }
+      100% { transform: translateY(0px); opacity: 0.9; }
+    }
+
+    @keyframes mistMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
+  </style>
+  <script src="inferno.js" defer></script>
+</head>
+<body>
+  <div class="fog"></div>
+
+  <h1>♆ Inferno ♆</h1>
+  <div class="devil-face">𓆩😈𓆪</div>
+
+  <div class="tarot-table">
+    <div class="tarot-card">
+      <div class="symbol">𓄋</div>
+      <div class="card-title">The Devil</div>
+      <div class="glow-number">15</div>
+    </div>
+    <div class="tarot-card">
+      <div class="symbol">☠</div>
+      <div class="card-title">The Death</div>
+      <div class="glow-number">13</div>
+    </div>
+  </div>
+
+  <footer>
+    🩸 Blood drawn is never forgotten. The Abyss... remembers your gaze.
+  </footer>
+</body>
+</html>

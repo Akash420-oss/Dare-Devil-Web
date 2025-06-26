@@ -116,7 +116,11 @@ else if(val===1){
 }
 }
 window.addEventListener('load', ()=>{
+if(document.cookie.includes('Souls')==true){
+        location.href="menu.html"
+    }
     fn.value=null
     ln.value=null
     lv.value="Summon The Darkness"
+
   });

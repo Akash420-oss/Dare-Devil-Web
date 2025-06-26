@@ -1,20 +1,25 @@
 
-rules=()=>{
+const rules=()=>{
     const r=document.getElementById('r')
     r.click();
 };
-go=(val)=>{
+const go=(val)=>{
 const a=document.body.firstElementChild;
 const b=document.body.firstElementChild.nextElementSibling;
     if(val===1){
+        if(document.cookie.includes('Souls')==true){
+            location.href="menu.html"
+        }
+        else{
         a.click();
+        }
     }
     else{
        b.click()
     
     }
 }
-p=(c)=>{
+const p=(c)=>{
     let str=[]
     if(c===1){
 for(let i=887;i<904;i++){

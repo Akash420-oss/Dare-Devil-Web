@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Creepster&display=swap" rel="stylesheet">
+  <link rel="icon" type="images/x-icon" href="icons/favicon.ico">
+  <script src="ascii.js" defer></script>
+  <script src="m.js" defer></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0b0000 url('icons/hat_skull.jpeg') no-repeat center center/cover;
+      font-family: 'Nosifer', cursive;
+      color: #e2d7ce;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 120%;
+      height: 140%;
+      background: url('icons/hat_skull.jpeg');
+      opacity: 0.05;
+      animation: drift 60s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0,0); }
+      100% { transform: translate(-100px, 200px); }
+    }
+
+    .header {
+      position: absolute;
+      top: 20px; left: 20px;
+      padding: 15px 25px;
+      border: 2px solid #801212;
+      background: rgba(0,0,0,0.6);
+      box-shadow: inset 0 0 10px #801212;
+      font-size: 1.1rem;
+      transform: rotate(-1deg);
+    }
+    .header span { display: block; margin-bottom: 6px; }
+
+    header strong { color: #ff4b4b; }
+
+    h1 {
+      text-align: center;
+      font-family: 'Creepster', cursive;
+      font-size: 4.5rem;
+      color: #ff1a1a;
+      text-shadow: 0 0 15px #ff1a1a, 0 0 30px #550000;
+      margin-top: 80px;
+      animation: pulse 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 15px #ff1a1a, 0 0 30px #550000; }
+      100% { text-shadow: 0 0 5px #ff1a1a, 0 0 10px #550000; }
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      margin-top: 60px;
+    }
+
+    .menu a {
+      position: relative;
+      display: inline-block;
+      padding: 15px 35px;
+      font-size: 2.2rem;
+      color: #ffa8a8;
+      background: rgba(20,0,0,0.85);
+      border: 3px solid #801212;
+      text-decoration: none;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      text-shadow: 0 0 5px #801212;
+    }
+
+    .menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 20%;
+      width: 5px; height: 15px;
+      background: #a50000;
+      border-radius: 50%;
+      animation: drip-small 1.5s infinite ease-in-out;
+    }
+
+    @keyframes drip-small {
+      0% { transform: translateY(0) scaleX(1); opacity: 1; }
+      100% { transform: translateY(15px) scaleX(0.3); opacity: 0; }
+    }
+
+    .menu a:hover {
+      transform: scale(1.02) rotate(-0.5deg);
+      background: #801212;
+      color: #111;
+      box-shadow: 0 0 20px #ff1a1a, 0 0 40px #550000;
+      animation: glitch-short 0.4s ease-in-out infinite;
+    }
+
+    @keyframes glitch-short {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-2px, -2px); }
+      80% { transform: translate(2px, 2px); }
+    }
+
+    .current {
+      margin-top: 40px;
+      padding: 20px 30px;
+      border: 3px dashed #801212;
+      background: rgba(0,0,0,0.7);
+      font-size: 1.5rem;
+      animation: sway 5s ease-in-out infinite;
+      box-shadow: 0 0 10px #801212;
+      transform-origin: right center;
+    }
+
+    @keyframes sway {
+      0%,100% { transform: rotate(0.5deg); }
+      50% { transform: rotate(-0.5deg); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span id="name"><strong>Diabolical Host:</strong> ◈ DareDevil</span>
+    <span id="scores"><strong>Souls:</strong> ☠ 0</span>
+  </div>
+  <h1>Welcome to Dare Devil</h1>
+
+  <div class="current">CURRENT LEVEL → Level 0: SUMMON THE DARKNESS</div>
+
+  <div class="menu">
+    <a id="sini" onclick="select_level(1)" style="cursor: pointer;">Level 1: SINISTER</a>
+    <a id="infer" onclick="select_level(2)" style="cursor: pointer;">Level 2: INFERNO</a>
+  </div>
+
+</body>
+</html>

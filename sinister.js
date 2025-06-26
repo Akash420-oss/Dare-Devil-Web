@@ -5,6 +5,8 @@ let moon=document.getElementsByClassName('tarot-card')[1];
 let devil=document.getElementsByClassName('tarot-card')[2];
 let tower=document.getElementsByClassName('tarot-card')[3];
 let death=document.getElementsByClassName('tarot-card')[4];
+window.addEventListener('load',()=>{
+if(document.cookie.includes('Diabolical_Host')==true && document.cookie.includes('Level')==true && document.cookie.includes('Souls')==true){
 let sin=setInterval(()=>{
 let num 
 let get_soul=(callback)=>{
@@ -27,6 +29,7 @@ let soul_check=(arr,stop)=>{
             num=1
         }
 }
+let checker=false;
 const soul=(souls)=>{
 const expire_time=new Date();
 expire_time.setTime(expire_time.getTime() + (2*24*60*60*1000))
@@ -39,11 +42,11 @@ if(souls==="+10"){
 else if(souls==="-10"){
     soul_val_num=soul_val_num-10
 }
-else{
+else if(souls==="0"){
     soul_val_num=0
 }
 while(num==1){
-    document.cookie=`Souls=${btoa('0')}; expires=${expire_date}; path=/`;
+   document.cookie=`Souls=${btoa('0')}; expires=${expire_date}; path=/`;
 }
 document.cookie=`Souls=${btoa(soul_val_num)}; expires=${expire_date}; path=/`;
 }
@@ -60,6 +63,7 @@ document.getElementsByClassName('devil-face')[0].outerHTML=`<div class="devil-fa
 let check=Number.parseInt(Math.random()*5);
 devill=()=>{
     if(arr[0]===call){
+    checker=true
     moon.style.display='none';
     tower.style.display='none';
     devil.style.display='none';
@@ -74,6 +78,7 @@ devill=()=>{
     }
 
     else{
+        checker=true
         tower.style.display='none';
         devil.style.display='none';
         moon.style.display='none';
@@ -89,6 +94,7 @@ devill=()=>{
 }
 moonn=()=>{
     if(arr[1]===call){
+    checker=true
     devil.style.display='none';
     tower.style.display='none';
     death.style.display='none';
@@ -102,15 +108,17 @@ moonn=()=>{
     },1000);
     }
     else if(x===y){
+        checker=true
         soul("+10")
-        fool.style.display==='none'
-        moon.style.display==='none'
-        devil.style.display==='none'
-        tower.style.display==='none' 
-        death.style.display==='none'
+        fool.style.display='none'
+        moon.style.display='none'
+        devil.style.display='none'
+        tower.style.display='none' 
+        death.style.display='none'
     }
     
     else{
+        checker=true
         moon.style.display='none';
         devil.style.display='none';
         death.style.display='none';
@@ -128,6 +136,7 @@ moonn=()=>{
 }
 fooll=()=>{
     if(arr[2]===call){
+        checker=true
     death.style.display='none';
     fool.style.display='none';
     devil.style.display='none';
@@ -141,14 +150,16 @@ fooll=()=>{
     },1000);
     }
     else if(x===y){
+        checker=true
         soul("+10")
-        fool.style.display==='none'
-        moon.style.display==='none'
-        devil.style.display==='none'
-        tower.style.display==='none' 
-        death.style.display==='none'
+        fool.style.display='none'
+        moon.style.display='none'
+        devil.style.display='none'
+        tower.style.display='none' 
+        death.style.display='none'
     }
     else{
+        checker=true
         moon.style.display='none';
         devil.style.display='none';
         fool.style.display='none';
@@ -164,6 +175,7 @@ fooll=()=>{
 }
 deathh=()=>{
     if(arr[3]===call){
+    checker=true
     fool.style.display='none';
     tower.style.display='none';
     death.style.display='none';
@@ -178,6 +190,7 @@ deathh=()=>{
     }
 
     else{
+        checker=true
         fool.style.display='none';
         moon.style.display='none';
         tower.style.display='none';
@@ -193,6 +206,7 @@ deathh=()=>{
 }
 towerr=()=>{
     if(arr[4]===call){
+    checker=true
     fool.style.display='none';
     tower.style.display='none';
     death.style.display='none';
@@ -206,14 +220,16 @@ towerr=()=>{
     },1000);
     }
     else if(x===y){
+        checker=true
         soul("+10")
-        fool.style.display==='none'
-        moon.style.display==='none'
-        devil.style.display==='none'
-        tower.style.display==='none' 
-        death.style.display==='none'
+        fool.style.display='none'
+        moon.style.display='none'
+        devil.style.display='none'
+        tower.style.display='none' 
+        death.style.display='none'
     }
     else{
+        checker=true
         fool.style.display='none';
         devil.style.display='none';
         tower.style.display='none';
@@ -243,6 +259,20 @@ death.addEventListener('click',deathh);
 else if(check===4){
 tower.addEventListener('click',towerr);            
 }
+const expire_time=new Date();
+expire_time.setTime(expire_time.getTime() + (2*24*60*60*1000))
+let expire_date=expire_time.toUTCString()
+let soul_val=atob(get_soul(soul_check))
+let soul_val_num=Number.parseInt(soul_val)
+let stop=setInterval(()=>{
+    if(checker==false){
+        soul_val_num=soul_val_num-1
+        document.cookie=`Souls=${btoa(soul_val_num)}; expires=${expire_date}; path=/`;
+    }
+    else{
+        clearInterval(stop)
+    }
+},1000)
 //Hint: I didn't use removeEventListener
 let setu=setTimeout(()=>{
     if(fool.style.display==='none' || moon.style.display==='none' || devil.style.display==='none' || tower.style.display==='none' || death.style.display==='none'){
@@ -256,14 +286,31 @@ let setu=setTimeout(()=>{
     document.getElementById('3').hidden=true
     document.getElementById('4').hidden=true
     document.getElementById('5').hidden=true
-
+  
     }
     },13000)
     if(count===2){
         clearTimeout(setu);
     }
-if(count===2){
-    clearInterval(sin);
+if(count===3){
+    document.getElementsByClassName('devil-face')[0].outerHTML=`<div class="devil-face">𓆩😈𓆪</div>`;
+     location.href="menu.html"
+    clearInterval(sin);  
 }
 count++;
 },13000);
+}
+else{
+    const pd=(callback)=>{
+    while(true){
+        callback()
+    }
+    }
+    const pd2=()=>{
+        while(true){
+            console.error("Forbidden by infernal decree")
+        }
+    }
+    pd(pd2)
+}
+})
