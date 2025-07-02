@@ -16,13 +16,13 @@ fn.addEventListener("keyup",(k)=>{
     }
 }
 });
-first_name=(val)=>{
+const first_name=(val)=>{
     if(val==1){
     fn.hidden=false;
     }
     }
 
-last_name=(val)=>{
+const last_name=(val)=>{
 if(val==1){
 ln.hidden=false;
 ln.addEventListener("keyup",(k)=>{
@@ -38,14 +38,14 @@ if(k.key===i){
 }
 }
 
-level_op=(val)=>{
+const level_op=(val)=>{
     if(val==1){
     lv.hidden=false;
     lv.disabled=true;
     lv.value="Summon The Darkness";
 }
 }
-level_select=(val)=>{
+const level_select=(val)=>{
     if(val===1){
     lv.hidden=false;
     lv.disabled=true;
@@ -64,7 +64,7 @@ let diabolic_host=(first_val,last_val,level_val)=>{
     document.cookie=`Diabolical_Host=${first_val} ${last_val}; expires=${expire_date}; path=/`
     document.cookie=`Level=${level_val}; expires=${expire_date}; path=/`
     }
-button_on=(val)=>{
+const button_on=(val)=>{
     if(val=='0'){
     document.getElementsByTagName('button')[0].hidden=false;
     document.getElementsByTagName('button')[0].addEventListener('click',()=>{

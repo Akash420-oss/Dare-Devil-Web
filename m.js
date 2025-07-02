@@ -90,7 +90,7 @@ else if(level==2){
 }
 }
 window.addEventListener('load',()=>{
-    if(document.cookie.includes('Souls')==false){
+    if(document.cookie.includes('Diabolical_Host')==false && document.cookie.includes('Level')==false && document.cookie.includes('Souls')==false){
     location.href="not_found.html"
     }
 });

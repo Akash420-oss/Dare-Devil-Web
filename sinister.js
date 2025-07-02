@@ -1,5 +1,6 @@
-
-let arr=[],count=0,x=0,y=1;
+import { crash2,call_back_2,crash5 } from "./c.js";
+let arr=[],count=0
+window.x=0,window.y=1;
 let fool=document.getElementsByClassName('tarot-card')[0];
 let moon=document.getElementsByClassName('tarot-card')[1];
 let devil=document.getElementsByClassName('tarot-card')[2];
@@ -7,6 +8,13 @@ let tower=document.getElementsByClassName('tarot-card')[3];
 let death=document.getElementsByClassName('tarot-card')[4];
 window.addEventListener('load',()=>{
 if(document.cookie.includes('Diabolical_Host')==true && document.cookie.includes('Level')==true && document.cookie.includes('Souls')==true){
+    const level_change=(level_name)=>{
+        const expire_time=new Date()
+        expire_time.setTime(expire_time.getTime() + (2*24*60*60*1000))
+        let expire_date=expire_time.toUTCString()
+        document.cookie=`Level=${level_name};expires=${expire_date}`
+     }
+     level_change("Sinister")
 let sin=setInterval(()=>{
 let num 
 let get_soul=(callback)=>{
@@ -61,7 +69,7 @@ i++;
 }while(i<val)
 document.getElementsByClassName('devil-face')[0].outerHTML=`<div class="devil-face">${call}</div>`;
 let check=Number.parseInt(Math.random()*5);
-devill=()=>{
+const devill=()=>{
     if(arr[0]===call){
     checker=true
     moon.style.display='none';
@@ -73,6 +81,7 @@ devill=()=>{
     death.setAttribute('style','transform:rotateY(180deg)')
     document.getElementById('5').outerHTML="<div id='5' style='transform:rotateY(180deg);'>☠ Death’s Domain No Souls Gained, Only Endless Emptiness ☠</div>"
     soul("0")
+    crash2()
     clearTimeout(t)
     },1000);
     }
@@ -88,11 +97,12 @@ devill=()=>{
         death.setAttribute('style','transform:rotateY(180deg)')
         document.getElementById('5').outerHTML="<div id='5' style='transform:rotateY(180deg);'>☠ No souls gained, for you are no longer among them. You have failed ☠</div>"
         soul("0")
+        crash5(call_back_2)
         clearTimeout(d)
         },1000);
     }
 }
-moonn=()=>{
+const moonn=()=>{
     if(arr[1]===call){
     checker=true
     devil.style.display='none';
@@ -134,7 +144,7 @@ moonn=()=>{
     }
     
 }
-fooll=()=>{
+const fooll=()=>{
     if(arr[2]===call){
         checker=true
     death.style.display='none';
@@ -173,7 +183,7 @@ fooll=()=>{
         },1000);
     }
 }
-deathh=()=>{
+const deathh=()=>{
     if(arr[3]===call){
     checker=true
     fool.style.display='none';
@@ -185,6 +195,7 @@ deathh=()=>{
     devil.setAttribute('style','transform:rotateY(180deg)')
     document.getElementById('3').outerHTML="<div id='3' style='transform:rotateY(180deg);'>Ψ The Devil Claims Your Soul Ψ</div>"
     soul("0")
+    crash5(call_back_2)
     clearTimeout(devv)
     },1000);
     }
@@ -200,11 +211,12 @@ deathh=()=>{
         devil.setAttribute('style','transform:rotateY(180deg)')
         document.getElementById('3').outerHTML="<div id='3' style='transform:rotateY(180deg);'>Ψ Infernal Chains Bind Your Soul Prepare to Burn Ψ</div>"
         soul("0")
+        crash2()
         clearTimeout(mo)
         },1000);
     }
 }
-towerr=()=>{
+const towerr=()=>{
     if(arr[4]===call){
     checker=true
     fool.style.display='none';

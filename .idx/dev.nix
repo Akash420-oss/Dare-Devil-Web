@@ -7,6 +7,7 @@
   packages = [
     pkgs.nodejs_20
     pkgs.python3
+    pkgs.sudo
   ];
   # Sets environment variables in the workspace
   env = {};
