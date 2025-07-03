@@ -31,7 +31,7 @@ This infernal creation wrought from the dark arts of HTML, the mystic styles of 
  - ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
 
 # Awakening the Shadows
-- Here lies the portal—dare to enter and play, if you dare… 😈🔥: <a href="https://tryhackme.com/jr/daredevil">Dare Devil</a>
+- Here lies the portal—dare to enter and play, if you dare… 😈🔥: <a href="https://dare-devil-web-4227e.web.app/">Dare Devil</a>
 
 
 # Infernal Engineer
