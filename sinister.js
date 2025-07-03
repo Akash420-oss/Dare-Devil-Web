@@ -14,7 +14,9 @@ window.addEventListener('load', () => {
             let expire_date = expire_time.toUTCString()
             document.cookie = `Level=${level_name};expires=${expire_date}`
         }
-        level_change("Sinister")
+        if (document.cookie.includes('Level=Sinister') == false) {
+            level_change("Sinister")
+        }
         let sin = setInterval(() => {
             let num
             let get_soul = (callback) => {
