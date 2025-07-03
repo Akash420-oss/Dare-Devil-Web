@@ -49,7 +49,7 @@ export const call_back_2 = () => {
         }
     }
 }
-export const crash5 = () => {
+export const crash5 = (callback) => {
     while (true) {
         callback()
         while (true) {
