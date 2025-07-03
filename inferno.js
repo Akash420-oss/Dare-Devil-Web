@@ -75,7 +75,9 @@ const infer = async () => {
       let expire_date = expire_time.toUTCString()
       document.cookie = `Level=${level_name};expires=${expire_date}`
     }
-    level_change("Inferno")
+    if (document.cookie.includes('Level=Inferno') == false) {
+      level_change("Inferno")
+    }
     let card_1 = document.getElementsByClassName('tarot-card')[0], card_2 = document.getElementsByClassName('tarot-card')[1];
     let card_change = Number.parseInt(Math.random() * 20)
     let set = Number.parseInt(Math.random() * 5)
