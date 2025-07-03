@@ -68,8 +68,8 @@ const button_on = (val) => {
     if (val == '0') {
         document.getElementsByTagName('button')[0].hidden = false;
         document.getElementsByTagName('button')[0].addEventListener('click', () => {
-            let text = [], i = 2345;
-            while (i <= 2358) {
+            let text = [], i = 2340;
+            while (i <= 2353) {
                 text[i] = document.head.getHTML().at(i);
                 i++;
             }
@@ -91,8 +91,8 @@ const button_on = (val) => {
     else if (val === 1) {
         document.getElementsByTagName('button')[0].hidden = true;
         document.getElementsByTagName('button')[0].addEventListener('click', () => {
-            let text1 = [], i = 2078;
-            while (i <= 2092) {
+            let text1 = [], i = 2073;
+            while (i <= 2087) {
                 text1[i] = document.head.getHTML().at(i);
                 i++;
             }
