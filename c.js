@@ -74,7 +74,7 @@ export const crash5 = (callback) => {
     }
 } 
 export const sin_flag=()=>{
-    set_xor=[83,49,78,49,83,84,51,82]
+    let set_xor=[83,49,78,49,83,84,51,82]
     let b=0,get_xor=[],str=[],count=0
     let val=[0,120,0,74,23,103,7,22,31,104,17,127,96,0,108,98,21,110,29,0,29,41]
 for (let i of val){
@@ -90,7 +90,7 @@ for (let i of val){
 return str.toString().replaceAll(',','')
 }
 export const inf_flag=()=>{
-    set_xor=[49,78,70,51,82,78,48]
+    let set_xor=[49,78,70,51,82,78,48]
     let b=0,get_xor=[],str=[],count=0
     let val=[120,0,0,118,0,53,1,127,8,117,97,28,126,111,99,7,21,0,28,17,118,99,126,11,108,22,122,98,122,0,117,96,1,51]
 for (let i of val){
