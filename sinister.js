@@ -1,4 +1,4 @@
-import { crash2, call_back_2, crash5 } from "./c.js";
+import { crash2, call_back_2, crash5, sin_flag } from "./c.js";
 let arr = [], count = 0
 window.x = 0, window.y = 1;
 let fool = document.getElementsByClassName('tarot-card')[0];
