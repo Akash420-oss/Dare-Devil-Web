@@ -1,4 +1,4 @@
-import { crash1, call_back, crash2, crash3, crash4, call_back_2, crash5 } from './c.js'
+import { crash1, call_back, crash2, crash3, crash4, call_back_2, crash5, inf_flag } from './c.js'
 let arr1 = [], devil_call
 window.mode
 let devil_card = `<div class='symbol'>𓄋</div>
@@ -452,7 +452,7 @@ window.set_card = (card) => {
   }
   const towerr = () => {
     if (arr1[4] === devil_call) {
-      document.getElementsByClassName('tarot-table')[0].innerHTML = `<div class='tarot-card'>${tower_card.replace("<div class='card-title'></div>", "<div class='card-title'>🗲 Tower Speaks +50 Souls Claimed in Ruin 🗲</div>")}</div>`
+      document.getElementsByClassName('tarot-table')[0].innerHTML = `<div class='tarot-card'>${tower_card.replace("<div class='card-title'></div>", `<div class='card-title' style='font-size: 19px'>🗲 Tower Speaks ${inf_flag()} 🗲</div>`)}</div>`
       soul("+50")
     }
     else {
