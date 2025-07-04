@@ -127,6 +127,12 @@ window.addEventListener('load', () => {
                     devil.style.display = 'none'
                     tower.style.display = 'none'
                     death.style.display = 'none'
+                    let f_l = setTimeout(() => {
+                        fool.setAttribute('style', 'transform:rotateY(180deg)')
+                        document.getElementById('1').outerHTML = `<div id='1' style='transform:rotateY(180deg);'>🜂 The Fool’s Price ${sin_flag()} 🜂</div>`
+                        soul("+10")
+                        clearTimeout(f_l)
+                    },0);
                 }
 
                 else {
